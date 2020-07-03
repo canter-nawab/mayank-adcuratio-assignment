@@ -1,0 +1,1 @@
+# mayank-adcuratio-assignment
