@@ -1,0 +1,114 @@
+<html> 
+    <head>
+        <title>Assignment</title>
+        <script type="text/javascript">
+            function validate(){
+                var username=document.getElementById("uname");
+                var password=document.getElementById("pass");
+                
+                if(username.value.trim()=="" && password.value.trim()==""){
+                    uname.style.border="solid 3px red";
+                    document.getElementById("lbluser").style.visibility="visible";
+                    pass.style.border="solid 3px red";
+                    document.getElementById("lblpass").style.visibility="visible";
+                    return false;
+                }
+
+                else if(username.value.trim()==""){
+                    // alert("Blank Username");
+                    uname.style.border="solid 3px red";
+                    document.getElementById("lbluser").style.visibility="visible";
+                    return false;
+                }
+
+                else if(password.value.trim()==""){
+                    // alert("Blank Password");
+                    pass.style.border="solid 3px red";
+                    document.getElementById("lblpass").style.visibility="visible";
+                    return false;
+                }
+                
+
+                else if(password.value.trim().length<8){
+                    alert("Password less than 8 characters");
+                    return false;
+                }
+                else {
+                    return true;
+                }
+
+            }
+            // document.write("Hello World");
+            
+        </script>
+        <style>
+            input {
+                width: 50%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-top: 10px;
+                margin-bottom: 16px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                }
+            
+            button {
+                background-color: black;
+                color: white;
+                padding: 12px;
+                width: 50%;
+                border-radius: 4px;
+                box-sizing: border-box;
+                border: 1px solid #ccc;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                cursor: pointer;
+                }
+                label{
+                    display: block;
+                margin-left: auto;
+                margin-right: auto;
+                color: white;
+                
+                width: 50%;
+                }
+            .container{
+                width:50%;
+                background-color: lightgrey;
+                padding-top: 5px;
+                padding-bottom: 20px;
+                padding-left: 2px;
+                padding-right: 2px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 10em;
+
+                
+                
+                }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 style="text-align: center;font-family: Arial, Helvetica, sans-serif;">Login Credentials</h1>
+            <form action="structure.html" onsubmit="return validate()">
+                <input type="text" placeholder="Username" id="uname"/>
+                <label id="lbluser" style="color:red; visibility:hidden;display: block;
+                margin-left: auto;
+                margin-right: auto;">Can't be blank</label><br><br>
+                <input id="pass" type="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}" 
+                title="Must contain at least one number,one uppercase and lowercase letter, one special character and at least 8 characters"/>
+                <label id="lblpass" style="color:red; visibility:hidden;display: block;
+                margin-left: auto;
+                margin-right: auto;">Can't be blank</label><br><br>
+                <button type="Submit">Login</button>
+            </form> 
+        </div>
+        
+    </body>
+</html>

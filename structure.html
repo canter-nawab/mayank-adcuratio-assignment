@@ -1,0 +1,83 @@
+<html> 
+    <head>
+        <title>Assignment</title>
+        <style>
+            button {
+                background-color: black;
+                color: white;
+                padding: 8px;
+                /* width: 50%; */
+                border-radius: 4px;
+                box-sizing: border-box;
+                border: 1px solid #ccc;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                cursor: pointer;
+                }
+                .column{
+                width:8em;
+                background-color: lightgrey;
+                padding: 20px;
+                text-align: center;
+                border-radius: 4px;
+               
+                display: block;
+                margin-left: auto;
+                margin-right: 2em;
+                margin-top: 2em;
+
+                
+                
+                }
+                .row{
+                    display: flex;
+                    align-items: center;
+                }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <form action="index.html">
+            
+            <button type="Submit">Logout</button>
+            </form>
+        </nav>
+        
+        <!-- <h1>Welcome</h1> -->
+        <div class="row">
+           
+            <div class="column" id="id1"></div>
+            <div class="column" id="id2"></div>
+            <div class="column" id="id3" style="margin-right: auto;"></div>
+    </div>
+        
+        <script type="text/javascript">
+            // document.write("Hello World");
+            function data(id,name,age,gender,email,phoneNo){
+                this.id=id;
+                this.name=name;
+                this.age=age;
+                this.gender=gender;
+                this.email=email;
+                this.phoneNo=phoneNo;
+                this.info=function()
+                {
+                    // document.write(this.id," ",this.name);
+                    
+                    return this.id+"<br>"+this.name+"<br>"+this.age+"<br>"+this.gender+"<br>"+this.email+"<br>"+this.phoneNo;
+                };
+            }
+            var c1=new data(1,"test1",11,"male","test1@gmail.com",9191919191);
+            var c2=new data(2,"test2",12,"male","test2@gmail.com",9292929292);
+            var c3=new data(3,"test3",13,"male","test3@gmail.com",9393939393);
+            
+            // document.write(c1.id);
+            // document.write(c1.id);
+            // document.write(c3.id);
+            document.getElementById("id1").innerHTML=c1.info();
+            document.getElementById("id2").innerHTML=c2.info();
+            document.getElementById("id3").innerHTML=c3.info();
+        </script>
+    </body>
+</html>
